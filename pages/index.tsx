@@ -45,7 +45,7 @@ export default function Home() {
   
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-        const form = event.target as HTMLFormElement;
+      const form = event.target as HTMLFormElement;
       const data = {
         phone: form.phone.valueOf(),
         name: form.name.valueOf()
@@ -99,12 +99,14 @@ export default function Home() {
     }
   }, [inView]);
   const scrollToDiv = () => {
-    scroll.scrollTo('#start', {
-      duration: 500,
-      delay: 100,
-      smooth: true,
-      offset: -50
-    });
+    const targetElement = document.getElementById('start');
+    if (targetElement) {
+      const offsetTop = targetElement.offsetTop;
+      scroll.scrollTo(offsetTop, {
+        duration: 500,
+        delay: 100,
+      });
+    }
   };
   function MD(props: JSX.IntrinsicAttributes & Omit<Omit<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & { ref?: ((instance: HTMLDivElement | null) => void) | React.RefObject<HTMLDivElement> | null | undefined; }, BsPrefixProps<"div"> & ModalProps> & BsPrefixProps<"div"> & ModalProps & { children?: React.ReactNode; }) {
     return (
