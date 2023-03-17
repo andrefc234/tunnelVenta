@@ -45,9 +45,10 @@ export default function Home() {
   
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
+      const form = event.target as HTMLFormElement;
       const data = {
-        phone: event.target.phone.value,
-        name:event.target.name.value
+        phone: form.phone.value,
+        name: form.name.value
       }
   console.log(data)
       try {
@@ -115,7 +116,7 @@ export default function Home() {
        
         className='text-white'
       >
-        <Modal.Header closeButton  className='bg-dark' closeVariant='white' closeVariant='white'>
+        <Modal.Header closeButton  className='bg-dark' closeVariant='white' >
         <Modal.Title id="contained-modal-title-vcenter " className='text-white'>
         <div className="mx-auto">
 
