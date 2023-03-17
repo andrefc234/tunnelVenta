@@ -45,11 +45,11 @@ export default function Home() {
   
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      const form = event.target as HTMLFormElement;
+        const form = event.target as HTMLFormElement;
       const data = {
-        phone: form.phone.value,
-        name: form.name.value
-      }
+        phone: form.phone.valueOf(),
+        name: form.name.valueOf()
+      };
   console.log(data)
       try {
         setIsDownloading(true);
