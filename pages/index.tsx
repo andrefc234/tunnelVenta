@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useInView } from 'react-intersection-observer';
 import Fade from 'react-bootstrap/Fade';
-import {Button, Container,Modal, ModalProps,Navbar,Form} from 'react-bootstrap'
+import {Button, Container,Modal, ModalProps,Navbar,Form,Row,Col} from 'react-bootstrap'
 import { animateScroll as scroll } from 'react-scroll';
 import { Omit, BsPrefixProps } from 'react-bootstrap/esm/helpers';
 import axios from 'axios'
@@ -143,7 +143,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar variant="danger" bg="danger">
+      <Navbar className={styles.navColor }>
   <Container>
     <div className="mx-auto">
       <Navbar.Brand href="#home">
@@ -157,10 +157,10 @@ export default function Home() {
     <Container fluid className={styles.bgImageFirst }>
     <div id='start'>
       
-     <div > <h1 className=' mr-2 text-center text-danger p-5' >Recorrido virtual <br /> de tu próximo Loft en  Quer&eacute;taro. <br />Desde $1,850,000*MXN</h1></div>
+     <div > <h1 className=' mr-2 text-center text-white p-5' >Descubre tu nuevo loft en Quer&eacute;taro  <br /> y personalízalo sólo por  <br /> $1,850,000*MXN</h1></div>
       
       <div  className='text-center'>
-       <Button className='text-dark m-5' size="lg" variant="warning" onClick={() => setopenmodal(true)}>Ver Recorrido</Button>
+       <Button className='text-dark m-5'  size="lg" variant="warning" onClick={() => setopenmodal(true)}>Ver Recorrido</Button>
         
         <p className='text-center text-light'>*Sujeto a cambios sin previo aviso</p>
       </div>
@@ -170,14 +170,32 @@ export default function Home() {
       <div  ref={ref}>
       <Fade in={open}>
 <div className='text-center h2 m-5 p-5'>
-En Unique Living nos complace poder guiar tu experiencia en la que
-descubres tu espacio ideal y lo diseñas a tu estilo único.
+Agenda tu cita en Marzo y recibe 50% de descuento en la escrituración de tu terreno
 </div>
 
 </Fade>
       </div>
    
     </Container>
+    <br/>
+    <Container fluid className='m-2'>
+    <Row>
+      <Col className='text-center'>
+      <img src='/ICONOS/Asset16.png' height={'50%'}/>
+      <p className='mt-4 h6'>1 o 2 baños</p>
+      </Col>
+      <Col className='text-center'>
+      <img src='/ICONOS/Asset15.png' height={'40%'}/>
+      <p className='mt-4 h6'>1 a 3 recamaras</p>
+     
+      </Col>
+      <Col className='text-center'>
+      <img src='/ICONOS/Asset17.png' height={'50%'}/>
+      <p className='mt-4 h6'>Con terraza</p>
+      </Col>
+    </Row>
+      
+   </Container>
    <Container fluid className={styles.bgImageSecond }>
     <br/>
     <div className='p-5'></div>
@@ -185,16 +203,16 @@ descubres tu espacio ideal y lo diseñas a tu estilo único.
     <br/>
 
    <div > <h1 className=' text-center align-middle text-white p-5' >Un ambiente especialamente
- <br /> diseñado  para ti </h1></div>
+    <br /> diseñado  para ti </h1></div>
 
-<div className='pt-5'>
-<div  className='text-center'>
-    <Button className='text-white m-5' size="lg" variant="danger" onClick={scrollToDiv} >Ver Recorrido</Button>
+    <div className='pt-5'>
+    <div  className='text-center'>
+        <Button className='text-white m-5' size="lg" variant="danger" onClick={scrollToDiv} >Ver Recorrido</Button>
+        </div>
     </div>
-</div>
-    
-    <h1 className=' text-center align-middle text-white p-5' >Descarga el recorrido virtual<br /> y conoce tu proximo loft </h1>
-   
+        
+        <h1 className=' text-center align-middle text-white p-5' >Descarga el recorrido virtual<br /> y conoce tu proximo loft </h1>
+      
    </Container>
   </section>
   <Footer/>
